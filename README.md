@@ -6,7 +6,9 @@
 ## 学习前需要了解的内容
 
 - [开发者必备Docker命令](https://mp.weixin.qq.com/s/d_CuljDTJq680NTndAay8g)
+
 - [使用Docker Compose部署SpringBoot应用](https://mp.weixin.qq.com/s/iMl9bJ4SxUsNHBbiS5VUcw)
+
 - [SpringBoot应用中使用AOP记录接口访问日志](https://mp.weixin.qq.com/s/mNujRjejQ1bITveFI6gkcg)
 
 ## ELK中各个服务的作用
@@ -28,7 +30,9 @@ docker pull kibana:6.4.0
 ### 搭建前准备
 
 - elasticsearch 启动成功需要特殊配置，具体[参考](https://www.cnblogs.com/balloon72/p/13177872.html)中的elasticsearch部分；
+
 - docker-compose.yml文件地址:https://github.com/macrozheng/mall-learning/blob/master/mall-tiny-elk/src/main/docker/docker-compose.yml
+
 - logstash-springboot.conf配置文件地址：https://github.com/macrozheng/mall-learning/blob/master/mall-tiny-elk/src/main/docker/logstash-springboot.conf
 
 ### 开始搭建
@@ -36,6 +40,7 @@ docker pull kibana:6.4.0
 #### 创建一个存放logstash配置的目录并上传配置文件
 
 ##### 创建配置文件存放目录并上传配置文件到该目录
+
 ```shell
 # 进入根目录
 [root@192 /]# pwd
@@ -257,8 +262,4 @@ systemctl stop firewalld
 
 ### 总结
 搭建了ELK日志收集系统之后，我们如果要查看SpringBoot应用的日志信息，就不需要查看日志文件了，直接在Kibana中查看即可。
-
-## 项目源码地址
-
-[https://github.com/macrozheng/mall-learning/tree/master/mall-tiny-elk](https://github.com/macrozheng/mall-learning/tree/master/mall-tiny-elk)
 
