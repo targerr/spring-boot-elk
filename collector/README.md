@@ -647,6 +647,49 @@ output {
 }
 ```
 
+## 部署项目产生日志
+
+#### springboot java -jar xxx 没有主清单属性
+
+
+![image.png](https://upload-images.jianshu.io/upload_images/4994935-d3289ce5519f4c94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+![image.png](https://upload-images.jianshu.io/upload_images/4994935-09eecf24e8b55902.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+```
+<build>
+		<finalName>collector</finalName>
+    	<!-- 打包时包含properties、xml -->
+    	<resources>
+             <resource>  
+                <directory>src/main/java</directory>  
+                <includes>  
+                    <include>**/*.properties</include>  
+                    <include>**/*.xml</include>  
+                </includes>  
+                <!-- 是否替换资源中的属性-->  
+                <filtering>true</filtering>  
+            </resource>  
+            <resource>  
+                <directory>src/main/resources</directory>  
+            </resource>      	
+    	</resources>		
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.bfxy.collector.Application</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build> 	
+	
+```
+
+
 
 ## Kafka海量日志收集实战_watcher监控告警实战-1
 
